@@ -17,11 +17,11 @@ The `branches.txt` file is for optional (advised) configuration. It has two comm
 Info on [virtualenv](https://virtualenv.pypa.io/en/stable/installation/)
 
 After cloning:
-`cd brancher`
-`pip inistall virtualenv`
-`virtualenv brancher-env`
-`source brancher-env/Scripts/activate`
-`python -m pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew`
+* `cd brancher`
+* `pip inistall virtualenv`
+* `virtualenv brancher-env`
+* `source brancher-env/Scripts/activate`
+* `python -m pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew`
 
 ### Running
 
