@@ -1,0 +1,45 @@
+#:kivy 1.10.0
+
+<Brancher>:
+    # BoxLayout:
+    #     pos:(0,root.height-(root.height*.05) - 5)
+    #     Label:
+    #         text: 'Project Root'
+    #         size_hint:(.2,.05)
+    #     TextInput:
+    #         id:location
+    #         text: ''
+    #         size_hint:(.8,.05)
+    BoxLayout:
+        pos:(0,root.height-(root.height*.1)-10)
+        Label:
+            text: 'Branch'
+            size_hint:(.2,.05)
+        TextInput:
+            id:branch_name
+            text: ''
+            size_hint:(.7,.05)
+        Button:
+            text: 'Add'
+            id:root.cust
+            center: root.center
+            size_hint: (.1,.05)
+            on_press:root.on_add()
+    BoxLayout:
+        orientation:'vertical'
+        id:branches
+        spacing:2
+        pos:(0,100)
+        size_hint_y:(root.height-(2*root.height*.1) - 100)/root.height
+
+    BoxLayout:
+        pos:(0,-root.height/2 + 24)
+        Label:
+            id:status
+            text:'Nothing going on'
+            font_size:24
+
+
+<BranchButton>:
+    on_press:root.pressed()
+    size_hint:(1,.1)
