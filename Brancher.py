@@ -61,18 +61,21 @@ class Brancher(FloatLayout):
         global root
         cmds = []
         brn = False
-        with open('branches.txt') as f:
-            cmds = [c.strip() for c in f.readlines()]
-        for cmd in cmds:
-            if '>branches' in cmd:
-                brn = True
-                continue
-            elif '>path' in cmd:
-                brn = False
-                self._path = cmd[6:]
-                continue
-            if brn:
-                self.add_branch_button(cmd)
+        try:
+            with open('branches.txt') as f:
+                cmds = [c.strip() for c in f.readlines()]
+            for cmd in cmds:
+                if '>branches' in cmd:
+                    brn = True
+                    continue
+                elif '>path' in cmd:
+                    brn = False
+                    self._path = cmd[6:]
+                    continue
+                if brn:
+                    self.add_branch_button(cmd)
+        except:
+            logging.info('no brancher.txt file found, carrying on without config')
 
         root = self
 
