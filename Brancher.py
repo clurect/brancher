@@ -62,7 +62,7 @@ class Brancher(FloatLayout):
         cmds = []
         brn = False
         try:
-            with open('branches.txt') as f:
+            with open('config.txt') as f:
                 cmds = [c.strip() for c in f.readlines()]
             for cmd in cmds:
                 if '>branches' in cmd:
@@ -75,7 +75,7 @@ class Brancher(FloatLayout):
                 if brn:
                     self.add_branch_button(cmd)
         except:
-            logging.info('no brancher.txt file found, carrying on without config')
+            logging.info('no config.txt file found, carrying on without config')
 
         root = self
 
